@@ -1,5 +1,5 @@
 from django.shortcuts import render
-from django.http import HttpResponse
+import random
 
 
 def home(request):
@@ -7,6 +7,11 @@ def home(request):
 
 def password(request):
 
-    thepassword = 'testing'
+    thepassword = ''
+    characters = list('abcdefghijklmnopqrstuvwxyz')
+    lenth = 10
+
+    for i in range(lenth):
+        thepassword += random.choice(characters)
 
     return render(request, 'generator/password.html', {'password': thepassword})
