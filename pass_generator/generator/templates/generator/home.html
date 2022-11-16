@@ -12,15 +12,24 @@
 
 <body>
 
-
-
     <div class="container">
-        <p class="lead">Password generator on Django</p><br>
+        <p class="display-6 mt-5">Password generator on Django</p>
+        <ul class="nav nav-pills mb-2">
+            <li class="nav-item">
+                <a class="nav-link" href="{% url 'home' %}">Home</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="{% url 'password' %}">Password</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="{% url 'about' %}">About</a>
+            </li>
+        </ul>
         <main>
-            <div class="row g-5">
+            <div class="col g-5">
                 <div class="col-md-5">
                     <label for="country" class="form-label">Password lenth from 5</label>
-                    <form action="{% url 'password'%}">
+                    <form action="{% url 'password' %}">
                         <select class="form-select" id="country" required="" name="length">
                             <option value="5">5</option>
                             <option value="6">6</option>
@@ -30,20 +39,26 @@
                             <option value="10" selected="selected">10</option>
                             <option value="11">11</option>
                             <option value="12">12</option>
+                            <option value="13">13</option>
+                            <option value="14">14</option>
+                            <option value="14">14</option>
+                            <option value="15">15</option>
+                            <option value="16">16</option>
+                            <option value="17">17</option>
                         </select>
                 </div>
-                <div class="col-md-7 col-lg-8">
+                <div class="col-md-7 col-lg-8 mt-2">
 
                     <div class="form-check">
-                        <input type="checkbox" class="form-check-input" id="same-address">
+                        <input type="checkbox" class="form-check-input" id="same-address" name="uppercase">
                         <label class="form-check-label" for="same-address">Uppercase</label>
                     </div>
                     <div class="form-check">
-                        <input type="checkbox" class="form-check-input" id="save-info">
+                        <input type="checkbox" class="form-check-input" id="save-info" name="numbers">
                         <label class="form-check-label" for="save-info">Numbers</label>
                     </div>
                     <div class="form-check">
-                        <input type="checkbox" class="form-check-input" id="save-info">
+                        <input type="checkbox" class="form-check-input" id="save-info" name="specialCharacter">
                         <label class="form-check-label" for="save-info">Special Character</label>
                     </div>
                     <!-- <h4 class="mb-3">Payment</h4>
