@@ -9,6 +9,7 @@ def password(request):
 
     thepassword = ''
     characters = list('abcdefghijklmnopqrstuvwxyz')
+    lenth = int(request.GET.get('length', 10))
 
     if request.GET.get('uppercase'):
         characters.extend(list('ABCDEFGHIJKLMNOPQRSTUVWXYZ'))
@@ -19,14 +20,10 @@ def password(request):
     if request.GET.get('specialCharacter'):
         characters.extend(list('!@#$%^&*()_+'))
 
-    lenth = int(request.GET.get('length', 10))
-
     for i in range(lenth):
         thepassword += random.choice(characters)
 
     return render(request, 'generator/password.html', {'password': thepassword})
 
 def about(request):
-    params = request.GET.get('?', '')
-    # print(params)
     return render(request, 'generator/about.html')
